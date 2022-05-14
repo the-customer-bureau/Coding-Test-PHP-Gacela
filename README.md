@@ -30,6 +30,7 @@ And check out the example repos here:
 
 - Clone this repo
 - Install Docker on your local machine
+- Run `composer install`
 - Run the docker compose file – `docker-compose up`.
 - Once docker is running you should be able to visit the index screen here: http://localhost:8085
 - You should see a simple page with “Hello Application”
