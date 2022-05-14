@@ -22,7 +22,7 @@ And check out the example repos here:
 - https://github.com/gacela-project/gacela-example
 - https://github.com/gacela-project/symfony-gacela-example
 
-#### Please also see the code that's already in the `src` folder and think about how you module might work.
+#### Please also see the code that's already in the `src` folder and think about how your module might work.
 
 ## Setup
 
