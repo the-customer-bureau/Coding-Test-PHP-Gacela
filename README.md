@@ -1,0 +1,38 @@
+# The Customer Bureau Backend Developer Coding Test (PHP Gacela)
+
+## Instructions
+
+The challenge is to create your own module for this Gacela setup. Gacela is a Class Resolver that works in a similar way to the Spryker’s internal API.
+
+Your module must:
+- Use the Gacela Framework API for your design pattern
+- Use and call and external API, such as a weather API, currency converter, or even the Star Wars API…! [Use whatever you want](https://betterprogramming.pub/a-curated-list-of-100-cool-and-fun-public-apis-to-inspire-your-next-project-7600ce3e9b3), but please show that you understand external API calls.
+- Present some data on the index screen. Present this whatever way you wish – no frontend skills are being tested here! 😊
+- Demonstrate that you’ve read the Gacela docs and understand what Gacela is doing and why
+
+## Essential Reading
+
+Please read about the Galeca Project here:
+
+### https://gacela-project.com/
+
+And check out the example repos here:
+
+- https://github.com/gacela-project/gacela-example
+- https://github.com/gacela-project/symfony-gacela-example
+
+#### Please also see the code that's already in the `src` folder and think about how you module might work.
+
+## Setup
+
+#### Steps to install:
+
+- Clone this repo
+- Install Docker on your local machine
+- Run the docker compose file – `docker-compose up`.
+- Once docker is running you should be able to visit the index screen here: http://localhost:8085
+- You should see a simple page with “Hello Application”
+
+
+
+

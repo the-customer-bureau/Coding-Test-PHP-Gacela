@@ -1,0 +1,18 @@
+{
+  "name": "engineered/gacela",
+  "description": "A PHP Coding Test using Gacela",
+  "type": "library",
+  "license": "GPL-3.0-or-later",
+  "require": {
+    "php": "^7.4",
+    "gacela-project/gacela": "0.17.2",
+    "symfony/http-client": "^5.3",
+    "ext-pdo": "*",
+    "ext-mysqli": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Engineered\\": "src/"
+    }
+  }
+}

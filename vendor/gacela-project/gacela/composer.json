@@ -1,0 +1,98 @@
+{
+    "name": "gacela-project/gacela",
+    "homepage": "https://gacela-project.com/",
+    "type": "library",
+    "description": "Gacela Framework",
+    "keywords": ["php", "modular", "kernel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jose Maria Valera Reales",
+            "email": "chemaclass@outlook.es"
+        },
+        {
+            "name": "Jesus Valera Reales",
+            "email": "jesus1902@outlook.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "symfony/console": "^5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "vimeo/psalm": "^4.22",
+        "phpstan/phpstan": "^1.5",
+        "friendsofphp/php-cs-fixer": "^3.8",
+        "phpbench/phpbench": "^1.2",
+        "phpmetrics/phpmetrics": "^2.8",
+        "symfony/var-dumper": "^5.4"
+    },
+    "suggest": {
+        "gacela-project/gacela-env-config-reader": "Allows to read .env config files",
+        "gacela-project/gacela-yaml-config-reader": "Allows to read yml/yaml config files"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gacela\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GacelaTest\\": "tests"
+        }
+    },
+    "bin": [
+        "gacela"
+    ],
+    "config": {
+        "platform": {
+            "php": "7.4"
+        },
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
+    },
+    "scripts": {
+        "ctal": [
+            "@csfix",
+            "@test-all"
+        ],
+        "test-all": [
+            "@quality",
+            "@phpunit",
+            "@phpbench"
+        ],
+        "quality": [
+            "@csrun",
+            "@psalm",
+            "@phpstan"
+        ],
+        "phpunit": [
+            "@test-unit",
+            "@test-integration",
+            "@test-feature"
+        ],
+        "static-clear-cache": [
+            "vendor/bin/psalm --clear-cache",
+            "vendor/bin/phpstan clear-result-cache"
+        ],
+        "test-unit": "./vendor/bin/phpunit --testsuite=unit",
+        "test-integration": "./vendor/bin/phpunit --testsuite=integration",
+        "test-feature": "./vendor/bin/phpunit --testsuite=feature",
+        "test-all-suites": "./vendor/bin/phpunit --testsuite=unit,integration,feature --log-junit=data/log-junit.xml",
+        "test-coverage": "XDEBUG_MODE=coverage ./vendor/bin/phpunit --testsuite=unit,integration,feature --coverage-html=coverage",
+        "psalm": "./vendor/bin/psalm",
+        "phpstan": "./vendor/bin/phpstan analyze -c phpstan.neon src",
+        "csfix": "./vendor/bin/php-cs-fixer fix",
+        "csrun": "./vendor/bin/php-cs-fixer fix --dry-run",
+        "phpbench": "vendor/bin/phpbench run --report=aggregate --ansi",
+        "phpbench-base": "vendor/bin/phpbench run --tag=baseline --report=aggregate --progress=plain --ansi",
+        "phpbench-ref": "vendor/bin/phpbench run --ref=baseline --report=aggregate --progress=plain --ansi",
+        "metrics-report": [
+            "@test-all-suites",
+            "./vendor/bin/phpmetrics --config=phpmetrics-config.json --junit=data/log-junit.xml"
+        ]
+    }
+}

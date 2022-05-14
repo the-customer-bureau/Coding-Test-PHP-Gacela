@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+  php:
+    container_name: php-gacela
+    image: php:8.1.2-apache
+    depends_on:
+      - db
+    links:
+      - db:mysql
+    volumes:
+      - ./:/var/www/html/
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8085:80"
+    environment:
+      JOOMLA_DB_HOST: db
+      JOOMLA_DB_PASSWORD: root
+
+  db:
+    platform: linux/x86_64 #added for M1 Mac compatability - please delete as appropriate
+    container_name: db
+    image: mysql:5.6
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: gac_db
+      MYSQL_USER: gac_user
+      MYSQL_PASSWORD: root
+    ports:
+      - "9906:3306"
