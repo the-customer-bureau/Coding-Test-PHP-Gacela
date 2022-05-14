@@ -1,7 +1,0 @@
-/coverage/
-/.idea/
-/.vscode/
-/vendor/
-/data/
-/.phpbench/
-*.cache
