@@ -2,7 +2,7 @@
 
 ## Instructions
 
-The challenge is to create your own module for this Gacela setup. Gacela is a Class Resolver that works in a similar way to the Spryker’s internal API.
+The challenge is to create your own module for this Gacela setup. Gacela is a Class Resolver that works in a similar way to the Spryker internal API.
 
 Your module must:
 - Use the Gacela Framework API for your design pattern
