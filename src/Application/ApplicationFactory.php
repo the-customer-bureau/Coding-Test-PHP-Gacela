@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 /**
  * Copyright 2022 - The Customer Bureau - All Rights Reserved
@@ -15,11 +16,8 @@ use Engineered\Application\Domain\Application;
  */
 final class ApplicationFactory extends AbstractFactory
 {
-
-	public function createApplication(): Application
-	{
-
-		return new Application();
-
-	}
+    public function createApplication(): Application
+    {
+        return new Application();
+    }
 }

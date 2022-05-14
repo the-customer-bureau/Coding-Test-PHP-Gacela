@@ -1,14 +1,17 @@
 {
   "name": "engineered/coding_test_php_gacela",
   "description": "A PHP Coding Test using Gacela",
-  "type": "library",
+  "type": "project",
   "license": "GPL-3.0-or-later",
   "require": {
-    "php": "^7.4",
-    "gacela-project/gacela": "0.17.2",
+    "php": ">=7.4",
+    "gacela-project/gacela": "0.18",
     "symfony/http-client": "^5.3",
     "ext-pdo": "*",
     "ext-mysqli": "*"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
   },
   "autoload": {
     "psr-4": {
