@@ -6,7 +6,8 @@ The challenge is to create your own module for this Gacela setup. Gacela is a Cl
 
 Your module must:
 - Use the Gacela Framework API for your design pattern
-- Use and call and external API, such as a weather API, currency converter, or even the Star Wars API…! [Use whatever you want](https://betterprogramming.pub/a-curated-list-of-100-cool-and-fun-public-apis-to-inspire-your-next-project-7600ce3e9b3), but please show that you understand external API calls.
+- Use and call and external API, such as a weather API, currency converter, or even the Star Wars API…! <a href="https://betterprogramming.pub/a-curated-list-of-100-cool-and-fun-public-apis-to-inspire-your-next-project-7600ce3e9b3" target="_blank">Use whatever you want</a>,
+but please show that you understand external API calls.
 - Present some data on the index screen. Present this whatever way you wish – no frontend skills are being tested here! 😊
 - Demonstrate that you’ve read the Gacela docs and understand what Gacela is doing and why
 
