@@ -34,6 +34,8 @@ And check out the example repos here:
 - Run the docker compose file – `docker-compose up`.
 - Once docker is running you should be able to visit the index screen here: http://localhost:8085
 - You should see a simple page with “Hello Application”
+- Create the module
+- Make a Pull Request as your submission
 
 
 
