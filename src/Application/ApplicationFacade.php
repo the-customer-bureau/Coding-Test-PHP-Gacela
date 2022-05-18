@@ -12,10 +12,24 @@ use Gacela\Framework\AbstractFacade;
  */
 final class ApplicationFacade extends AbstractFacade
 {
-    public function boot(): void
+    public function welcome_message(): void
     {
         $this->getFactory()
             ->createApplication()
-            ->boot();
+            ->welcome_message();
+    }
+
+    public function get_currency_list(): array
+    {
+        return $this->getFactory()
+            ->createApplication()
+            ->currency_list();
+    }
+
+    public function convert_currency($conversion_data): float
+    {
+        return $this->getFactory()
+            ->createApplication()
+            ->covert_currency($conversion_data);
     }
 }
