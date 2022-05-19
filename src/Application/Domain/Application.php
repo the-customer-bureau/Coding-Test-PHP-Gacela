@@ -4,9 +4,15 @@
  * Copyright 2022 - The Customer Bureau - All Rights Reserved
  */
 namespace Engineered\Application\Domain;
-
-class Application
+final class Application
 {
+    private string $conversion_url;
+    
+    public function __construct()
+    {
+      $this->conversion_url = "https://api.exchangerate.host/convert?";
+    }
+
     public function welcome_message(): void
     {
         echo "<h1>Hello Application</h1>";
@@ -28,7 +34,7 @@ class Application
 
     public function covert_currency($conversion_data): float 
     {
-      $ch = curl_init("https://api.exchangerate.host/convert?".http_build_query($conversion_data));
+      $ch = curl_init($this->conversion_url.http_build_query($conversion_data));
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       $response = curl_exec($ch);
       $response = json_decode($response);
