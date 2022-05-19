@@ -4,7 +4,7 @@
  * Copyright 2022 - The Customer Bureau - All Rights Reserved
  */
 namespace Engineered\Application\Domain;
-final class Application
+class Application
 {   
     public function welcomeMessage(): void
     {

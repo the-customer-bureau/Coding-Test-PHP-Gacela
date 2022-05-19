@@ -5,8 +5,6 @@ namespace Engineered\Currency;
 
 use Gacela\Framework\AbstractFactory;
 use Engineered\Currency\Domain\Currency;
-use Engineered\Application\Domain\Application;
-use Engineered\Salary\CurrencyConfig;
 
 /**
  * @method CurrencyFactory getConfig()

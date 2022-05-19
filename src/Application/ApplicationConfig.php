@@ -9,4 +9,5 @@ use Gacela\Framework\AbstractConfig;
  */
 final class ApplicationConfig extends AbstractConfig
 {
+  
 }

@@ -9,7 +9,6 @@ namespace Engineered\Application;
 
 use Gacela\Framework\AbstractFactory;
 use Engineered\Application\Domain\Application;
-use Engineered\Application\ApplicationConfig;
 
 /**
  * @method ApplicationFactory getConfig()

@@ -2,7 +2,6 @@
 
 namespace Engineered\Currency;
 
-use Engineered\Currency\CurrencyConfig;
 use Gacela\Framework\AbstractFacade;
 
 /**
