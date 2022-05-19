@@ -1,14 +1,11 @@
 <?php declare(strict_types=1);
 
-/**
- * Copyright 2022 - The Customer Bureau - All Rights Reserved
- */
-namespace Engineered\Salary;
+namespace Engineered\Currency;
 
 use Gacela\Framework\AbstractDependencyProvider;
 use Gacela\Framework\Container\Container;
 
-final class SalaryDependencyProvider extends AbstractDependencyProvider
+final class CurrencyDependencyProvider extends AbstractDependencyProvider
 {
     public function provideModuleDependencies(Container $container): void
     {

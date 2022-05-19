@@ -7,22 +7,22 @@
 require __DIR__ . '/vendor/autoload.php';
 
 use Engineered\Application\ApplicationFacade;
-use Engineered\Salary\SalaryFacade;
+use Engineered\Currency\CurrencyFacade;
 
 $application = new ApplicationFacade();
-
 $application->welcomeMessage();
-$currency_list = $application->getCurrencyList();
+
+$currency_conversion = new CurrencyFacade();
+$currency_conversion->welcomeMessage();
+$currency_list = $currency_conversion->getCurrencyList();
 
 foreach ($currency_list as $list)
 {
   $conversion_data = ["from"=>$list->from, "to" => $list->to, "amount" => $list->amount, "places" => 2];
-  $conversion_value = $application->convertCurrency($conversion_data);
+  $conversion_value = $currency_conversion->convertCurrency($conversion_data);
 
   echo $list->amount." ".$list->from." "." exchanged into ".$list->to." is equal to: ".$conversion_value."<br><br>";
 }
 
-$salary = new SalaryFacade();
-$salary->welcomeMessage();
 
 

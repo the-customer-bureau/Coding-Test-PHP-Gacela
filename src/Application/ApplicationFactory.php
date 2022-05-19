@@ -20,10 +20,4 @@ final class ApplicationFactory extends AbstractFactory
     {
         return new Application();
     }
-
-    public function getConversionURL(): string 
-    {
-        return $this->getConfig()->getConversionURL();
-    }
-
 }
