@@ -26,11 +26,6 @@ final class ApplicationFacade extends AbstractFacade
             ->currencyList();
     }
 
-    public function getCoversionURL(): string
-    {
-
-    }
-
     public function convertCurrency($conversion_data): float
     {
         return $this->getFactory()

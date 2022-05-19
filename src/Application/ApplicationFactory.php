@@ -21,10 +21,4 @@ final class ApplicationFactory extends AbstractFactory
         return new Application();
     }
 
-    public function getCoversionURL(): Application
-    {
-      return new Application(
-                $this->getConfig()->getConversionURL()
-              );
-    }
 }
