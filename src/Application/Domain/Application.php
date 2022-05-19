@@ -13,13 +13,13 @@ final class Application
       $this->conversion_url = "https://api.exchangerate.host/convert?";
     }
 
-    public function welcome_message(): void
+    public function welcomeMessage(): void
     {
         echo "<h1>Hello Application</h1>";
         echo "<h3>Welcome to the currency exchange!</h3>";
     }
 
-    public function currency_list(): array
+    public function currencyList(): array
     { 
        $currencies = array();
        $currencies[1] = (object) array("amount"=> 198, "from"=>"GBP", "to"=>"EUR");
@@ -32,7 +32,7 @@ final class Application
        return $currencies;
     }
 
-    public function covert_currency($conversion_data): float 
+    public function covertCurrency($conversion_data): float 
     {
       $ch = curl_init($this->conversion_url.http_build_query($conversion_data));
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
