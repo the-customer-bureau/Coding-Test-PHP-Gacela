@@ -5,14 +5,7 @@
  */
 namespace Engineered\Application\Domain;
 final class Application
-{
-    private string $conversion_url;
-    
-    public function __construct()
-    {
-      $this->conversion_url = "https://api.exchangerate.host/convert?";
-    }
-
+{   
     public function welcomeMessage(): void
     {
         echo "<h1>Hello Application</h1>";
@@ -32,15 +25,15 @@ final class Application
        return $currencies;
     }
 
-    public function covertCurrency($conversion_data): float 
+    public function covertCurrency($conversion_url, $conversion_data): float 
     {
-      $ch = curl_init($this->conversion_url.http_build_query($conversion_data));
+      $ch = curl_init($conversion_url.http_build_query($conversion_data));
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       $response = curl_exec($ch);
       $response = json_decode($response);
       curl_close($ch);
 
-      $converted_value = round($response->result,2);
+      $converted_value = $response->result;
 
       return $converted_value;
     }

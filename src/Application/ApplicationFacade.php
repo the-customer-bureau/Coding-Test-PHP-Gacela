@@ -19,17 +19,25 @@ final class ApplicationFacade extends AbstractFacade
             ->welcomeMessage();
     }
 
-    public function get_currency_list(): array
+    public function getCurrencyList(): array
     {
         return $this->getFactory()
             ->createApplication()
             ->currencyList();
     }
 
-    public function convertCurrency($conversion_data): float
+    public function getConversionURL(): string
     {
         return $this->getFactory()
+            ->getConversionURL();
+    }
+
+    public function convertCurrency($conversion_data): float
+    {
+        $conversion_url = $this->getConversionURL();
+
+        return $this->getFactory()
             ->createApplication()
-            ->covertCurrency($conversion_data);
+            ->covertCurrency($conversion_url,$conversion_data);
     }
 }

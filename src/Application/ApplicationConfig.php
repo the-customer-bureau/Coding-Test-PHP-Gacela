@@ -9,5 +9,15 @@ use Gacela\Framework\AbstractConfig;
  */
 final class ApplicationConfig extends AbstractConfig
 {
+  private $convertUrl;
 
+  public function __construct()
+  {
+    $this->convertUrl = 'https://api.exchangerate.host/convert?';
+  }
+
+  public function getConversionURL(): string
+  {
+      return $this->convertUrl;
+  }
 }
