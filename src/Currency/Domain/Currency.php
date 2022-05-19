@@ -7,19 +7,19 @@ final class Currency
 {   
     public function welcomeMessage(): void
     {
-        echo "<h1>Niall & Ray!</h1>";
-        echo "<h3>Below you can see the Currency Converter.</h3>";
+        echo "<h2>Below you can see the Currency Converter in action:</h2>";
     }
 
     public function currencyList(): array
     { 
        $currencies = array();
-       $currencies[1] = (object) array("amount"=> 198, "from"=>"GBP", "to"=>"EUR");
-       $currencies[2] = (object) array("amount"=> 96, "from"=>"EUR", "to"=>"GBP");
-       $currencies[3] = (object) array("amount"=> 180, "from"=>"GBP", "to"=>"USD");
-       $currencies[4] = (object) array("amount"=> 900, "from"=>"USD", "to"=>"EUR");
-       $currencies[5] = (object) array("amount"=> 9000, "from"=>"JPY", "to"=>"EUR");
-       $currencies[6] = (object) array("amount"=> 100, "from"=>"JPY", "to"=>"GBP");
+       $currencies[1] = (object) array("amount"=>198, "from"=>"GBP", "to"=>"EUR");
+       $currencies[2] = (object) array("amount"=>96, "from"=>"EUR", "to"=>"GBP");
+       $currencies[3] = (object) array("amount"=>180, "from"=>"GBP", "to"=>"USD");
+       $currencies[4] = (object) array("amount"=>900, "from"=>"USD", "to"=>"EUR");
+       $currencies[5] = (object) array("amount"=>9000, "from"=>"JPY", "to"=>"EUR");
+       $currencies[6] = (object) array("amount"=>100, "from"=>"JPY", "to"=>"GBP");
+       $currencies[7] = (object) array("amount"=>117, "from"=>"JPY", "to"=>"USD");
        
        return $currencies;
     }

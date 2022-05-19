@@ -21,7 +21,7 @@ foreach ($currency_list as $list)
   $conversion_data = ["from"=>$list->from, "to" => $list->to, "amount" => $list->amount, "places" => 2];
   $conversion_value = $currency_conversion->convertCurrency($conversion_data);
 
-  echo $list->amount." ".$list->from." "." exchanged into ".$list->to." is equal to: <strong>".$conversion_value."</strong><br><br>";
+  echo "<p><strong>".$list->amount." ".$list->from." "."</strong> exchanged into <strong>".$list->to."</strong> is equal to: <strong>".$conversion_value." ".$list->to."</strong></p>";
 }
 
 
