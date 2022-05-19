@@ -2,6 +2,7 @@
 
 namespace Engineered\Currency\Domain;
 
+use Exception;
 final class Currency
 {   
     public function welcomeMessage(): void
@@ -23,16 +24,26 @@ final class Currency
        return $currencies;
     }
 
-    public function covertCurrency($conversion_url, $conversion_data): float 
+    public function covertCurrency($conversion_url, $conversion_data): string 
     {
-      $ch = curl_init($conversion_url.http_build_query($conversion_data));
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-      $response = curl_exec($ch);
-      $response = json_decode($response);
-      curl_close($ch);
+      try {
+          $ch = curl_init($conversion_url.http_build_query($conversion_data));
+          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+          $response = curl_exec($ch);
 
-      $converted_value = $response->result;
-
-      return $converted_value;
+          if ($response !== false) 
+          {
+            $response = json_decode($response);
+            curl_close($ch);
+            return (string) $response->result;
+          }
+          else 
+          {
+            throw new Exception("ERROR: There has been an issue with this conversion. Please try again.");
+          }
+      }
+      catch (Exception $e) {
+          return $e->getMessage();
+      }
     }
 }

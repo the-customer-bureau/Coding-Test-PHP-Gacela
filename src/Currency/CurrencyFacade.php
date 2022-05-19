@@ -23,7 +23,7 @@ final class CurrencyFacade extends AbstractFacade
             ->currencyList();
   }
 
-  public function convertCurrency($conversion_data): float
+  public function convertCurrency($conversion_data): string
   {
       $conversion_url = $this->getFactory()->getConversionURL();
 
