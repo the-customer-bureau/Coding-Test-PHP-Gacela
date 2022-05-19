@@ -11,13 +11,13 @@ use Engineered\Application\CurrencyFacade;
 
 $application = new ApplicationFacade();
 
-$application->welcome_message();
+$application->welcomeMessage();
 $currency_list = $application->get_currency_list();
 
 foreach ($currency_list as $list)
 {
   $conversion_data = ["from"=>$list->from, "to" => $list->to, "amount" => $list->amount];
-  $conversion_value = $application->convert_currency($conversion_data);
+  $conversion_value = $application->convertCurrency($conversion_data);
 
   echo $list->amount." ".$list->from." "." exchanged into ".$list->to." is equal to: ".$conversion_value."<br><br>";
 }
