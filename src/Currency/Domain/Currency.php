@@ -20,6 +20,7 @@ final class Currency
        $currencies[5] = (object) array("amount"=>9000, "from"=>"JPY", "to"=>"EUR");
        $currencies[6] = (object) array("amount"=>100, "from"=>"JPY", "to"=>"GBP");
        $currencies[7] = (object) array("amount"=>117, "from"=>"JPY", "to"=>"USD");
+       $currencies[7] = (object) array("amount"=>1900, "from"=>"JPY", "to"=>"USD");
        
        return $currencies;
     }
@@ -35,11 +36,19 @@ final class Currency
           {
             $response = json_decode($response);
             curl_close($ch);
-            return (string) $response->result;
+            
+            if ($response->success === true)
+            {
+                return (string) $response->result;
+            }
+            else 
+            {
+              throw new Exception("ERROR: There has been an issue with this conversion. Please check your entries and try again.");
+            }
           }
           else 
           {
-            throw new Exception("ERROR: There has been an issue with this conversion. Please try again.");
+            throw new Exception("ERROR: There has been an error with this call. Please try again.");
           }
       }
       catch (Exception $e) {
