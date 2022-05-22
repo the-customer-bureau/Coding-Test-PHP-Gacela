@@ -29,6 +29,6 @@ final class CurrencyFacade extends AbstractFacade
 
       return $this->getFactory()
           ->createCurrency()
-          ->covertCurrency($conversion_url,$conversion_data);
+          ->convertCurrency($conversion_url,$conversion_data);
   }
 }

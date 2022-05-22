@@ -13,19 +13,20 @@ final class Currency
     public function currencyList(): array
     { 
        $currencies = array();
-       $currencies[1] = (object) array("amount"=>198, "from"=>"GBP", "to"=>"EUR");
+       $currencies[1] = (object) array("amount"=>198, "from"=>"EUR", "to"=>"JPY");
        $currencies[2] = (object) array("amount"=>96, "from"=>"EUR", "to"=>"GBP");
        $currencies[3] = (object) array("amount"=>180, "from"=>"GBP", "to"=>"USD");
        $currencies[4] = (object) array("amount"=>900, "from"=>"USD", "to"=>"EUR");
        $currencies[5] = (object) array("amount"=>9000, "from"=>"JPY", "to"=>"EUR");
        $currencies[6] = (object) array("amount"=>100, "from"=>"JPY", "to"=>"GBP");
        $currencies[7] = (object) array("amount"=>117, "from"=>"JPY", "to"=>"USD");
-       $currencies[7] = (object) array("amount"=>1900, "from"=>"JPY", "to"=>"USD");
+       $currencies[8] = (object) array("amount"=>1900, "from"=>"JPY", "to"=>"USD");
+       $currencies[9] = (object) array("amount"=>90000, "from"=>"", "to"=>"");
        
        return $currencies;
     }
 
-    public function covertCurrency($conversion_url, $conversion_data): string 
+    public function convertCurrency($conversion_url, $conversion_data): string 
     {
       try {
           $ch = curl_init($conversion_url.http_build_query($conversion_data));
@@ -37,7 +38,7 @@ final class Currency
             $response = json_decode($response);
             curl_close($ch);
             
-            if ($response->success === true)
+            if ( ($response->success === true) && ($response->result))
             {
                 return (string) $response->result;
             }
@@ -48,7 +49,7 @@ final class Currency
           }
           else 
           {
-            throw new Exception("ERROR: There has been an error with this call. Please try again.");
+            throw new Exception("ERROR: There has been a problem with this call. Please try again.");
           }
       }
       catch (Exception $e) {
