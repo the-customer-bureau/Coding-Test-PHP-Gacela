@@ -18,15 +18,37 @@ class HPData
 
     public function getCharacters(): void
     {
-        echo count($this->makeRequest());
+        $characters = $this->makeRequest();
+        $this->getCharactersHTML($characters);
     }
 
-    public function getCharactersHTML(): void
+    public function getCharactersHTML($characters): void
     {
-        
+        if (empty($characters)) {
+            return;
+        }
+
+        $counter = 1;
+        $itemsPerRow = 5;
+        echo "<div class='row row-cols-$itemsPerRow'>";
+        foreach ($characters as $index => $character) {
+            $endRow = ($counter % $itemsPerRow == 0) ? '</div><div class="row row-cols-$itemsPerRow">' : '';
+            echo <<<OUTPUT
+                    <div class="col">
+                        <img src="$character->image" class="card-img-top" width="200"/>
+                        <div class="card-body">
+                        <h3 class="card-title">$character->name</h3>
+                        <span>$character->house</span>
+                        </div><!-- /.card-body -->
+                    </div><!-- /.col -->
+                $endRow
+            OUTPUT;
+
+            $counter++;
+        }
     }
 
-    private function makeRequest()
+    public function makeRequest()
     {
         $response = $this->client->request(
             'GET',
@@ -39,6 +61,6 @@ class HPData
             return [];
         }
 
-        return $response->toArray();
+        return json_decode($response->getContent());
     }
 }
