@@ -6,7 +6,12 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
+use Gacela\Framework\Gacela;
+use Gacela\Framework\Bootstrap\GacelaConfig;
 use Engineered\Application\ApplicationFacade;
+
+
+Gacela::bootstrap(__DIR__, GacelaConfig::withPhpConfigDefault());
 
 $application = new ApplicationFacade();
 

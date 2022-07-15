@@ -5,10 +5,19 @@
  */
 namespace Engineered\Application\Domain;
 
+use Engineered\HPData\HPDataFacade;
+
 class Application
 {
+    public function __construct(
+        private HPDataFacade $hpDataFacade,
+    )
+    {
+
+    }
+
     public function boot(): void
     {
-        echo 'Hello Application';
+        $this->hpDataFacade->getCharacters();
     }
 }
