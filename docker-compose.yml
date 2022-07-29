@@ -16,8 +16,8 @@ services:
     ports:
       - "8085:80"
     environment:
-      JOOMLA_DB_HOST: db
-      JOOMLA_DB_PASSWORD: root
+      DB_HOST: db
+      DB_PASSWORD: root
 
   db:
     platform: linux/x86_64 #added for M1 Mac compatability - please delete as appropriate
