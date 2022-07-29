@@ -1,0 +1,6 @@
+<?php return array (
+  '\\Engineered\\Application\\Factory' => '\\Engineered\\Application\\ApplicationFactory',
+  '\\Engineered\\Application\\DependencyProvider' => '\\Engineered\\Application\\ApplicationDependencyProvider',
+  '\\Engineered\\HPData\\Factory' => '\\Engineered\\HPData\\HPDataFactory',
+  '\\Engineered\\HPData\\Config' => '\\Engineered\\HPData\\HPDataConfig',
+);
