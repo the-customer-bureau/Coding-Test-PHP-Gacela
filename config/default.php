@@ -1,7 +1,5 @@
 <?php
-/**
- * Copyright 2022 - The Customer Bureau - All Rights Reserved
- */
-
-/** array */
-return [];
+use Engineered\API\APIConfig;
+return [ APIConfig::CATFACT_ADDRESS => 'https://catfact.ninja',
+         APIConfig::CATPICTURE_ADDRESS => 'https://cataas.com'
+];
