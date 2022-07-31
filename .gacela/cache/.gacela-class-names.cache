@@ -1,0 +1,5 @@
+<?php return array (
+  '\\Engineered\\Application\\Factory' => '\\Engineered\\Application\\ApplicationFactory',
+  '\\Engineered\\Marvel\\Factory' => '\\Engineered\\Marvel\\MarvelFactory',
+  '\\Engineered\\Marvel\\Config' => '\\Engineered\\Marvel\\MarvelConfig',
+);
