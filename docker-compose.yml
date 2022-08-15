@@ -11,7 +11,7 @@ services:
     working_dir: /tbc/app
     build:
       context: .
-      dockerfile: .tbc/docker/app/Dockerfile
+      dockerfile: .tcb/docker/app/Dockerfile
       target: dev
     ports:
       - "8085:8000"
