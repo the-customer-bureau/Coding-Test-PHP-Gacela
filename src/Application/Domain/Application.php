@@ -1,8 +1,19 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /**
- * Copyright 2022 - The Customer Bureau - All Rights Reserved
+ * @project TCB Coding Test
+ * @link https://github.com/the-customer-bureau/Coding-Test-PHP-Gacela
+ * @project engineered/coding_test_php_gacela
+ * @author The Customer Bureau
+ * @license GPL-3.0
+ * @copyright 2022 The Customer Bureau
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
+
 namespace Engineered\Application\Domain;
 
 use Engineered\Application\Infrastructure\Renderer;
@@ -15,11 +26,6 @@ class Application
     private PokemonFinder $finder;
     private Client $client;
 
-    /**
-     * @param Renderer $renderer
-     * @param PokemonFinder $finder
-     * @param Client $client
-     */
     public function __construct(Renderer $renderer, PokemonFinder $finder, Client $client)
     {
         $this->renderer = $renderer;
@@ -28,8 +34,6 @@ class Application
     }
 
     /**
-     * @return void
-     *
      * @throws \Engineered\Application\Infrastructure\RenderError
      * @throws \Engineered\Application\Infrastructure\TemplateNotFound
      * @throws \Engineered\PokeApi\Domain\ClientError
@@ -37,8 +41,9 @@ class Application
     public function boot(): void
     {
         $name = $_GET['name'] ?? '';
-        if ($name === '') {
+        if ('' === $name) {
             echo $this->renderer->render('input');
+
             return;
         }
 

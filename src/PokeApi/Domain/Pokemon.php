@@ -1,5 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * @project TCB Coding Test
+ * @link https://github.com/the-customer-bureau/Coding-Test-PHP-Gacela
+ * @project engineered/coding_test_php_gacela
+ * @author The Customer Bureau
+ * @license GPL-3.0
+ * @copyright 2022 The Customer Bureau
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Engineered\PokeApi\Domain;
 
 class Pokemon
@@ -8,11 +22,6 @@ class Pokemon
     private string $name;
     private string $imageUrl;
 
-    /**
-     * @param int $number
-     * @param string $name
-     * @param string $imageUrl
-     */
     public function __construct(int $number, string $name, string $imageUrl)
     {
         $this->number = $number;
@@ -20,25 +29,16 @@ class Pokemon
         $this->imageUrl = $imageUrl;
     }
 
-    /**
-     * @return int
-     */
     public function getNumber(): int
     {
         return $this->number;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return string
-     */
     public function getImageUrl(): string
     {
         return $this->imageUrl;

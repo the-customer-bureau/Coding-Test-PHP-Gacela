@@ -1,8 +1,19 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /**
- * Copyright 2022 - The Customer Bureau - All Rights Reserved
+ * @project TCB Coding Test
+ * @link https://github.com/the-customer-bureau/Coding-Test-PHP-Gacela
+ * @project engineered/coding_test_php_gacela
+ * @author The Customer Bureau
+ * @license GPL-3.0
+ * @copyright 2022 The Customer Bureau
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
+
 namespace Engineered\PokeApi\Domain;
 
 use Psr\Http\Client\ClientExceptionInterface;
@@ -27,7 +38,7 @@ final class PsrClient implements Client
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function getPokemonByNumber(int $number): Pokemon
     {
@@ -41,18 +52,15 @@ final class PsrClient implements Client
     }
 
     /**
-     * @param string $method
-     * @param string $path
-     * @return array
-     *
      * @throws ClientError
      * @throws NotFoundError
      */
-    private function makeRequest(string $method, string  $path): array
+    private function makeRequest(string $method, string $path): array
     {
         $url = $this->baseUrl.$path;
         $request = $this->request->createRequest($method, $url)
-            ->withHeader('Accept', 'application/json');
+            ->withHeader('Accept', 'application/json')
+        ;
 
         try {
             $response = $this->httpClient->sendRequest($request);
@@ -62,11 +70,11 @@ final class PsrClient implements Client
 
         $status = $response->getStatusCode();
 
-        if ($status === 404) {
+        if (404 === $status) {
             throw new NotFoundError('Pokemon not found');
         }
 
-        if ($status !== 200) {
+        if (200 !== $status) {
             throw new ClientError('Error in server response');
         }
 
@@ -74,15 +82,12 @@ final class PsrClient implements Client
     }
 
     /**
-     * @param \Psr\Http\Message\ResponseInterface $response
-     * @return array
-     *
      * @throws \Engineered\PokeApi\Domain\ClientError
      */
     private function responseToArray(PsrResponse $response): array
     {
         $body = (string) $response->getBody();
-        if ($body === '') {
+        if ('' === $body) {
             return [];
         }
 

@@ -26,10 +26,6 @@ boot:
 fmt:
 	$(COMPOSE_CMD) exec $(MAIN_SERVICE_NAME) vendor/bin/php-cs-fixer fix
 
-# Run static analysis on the code
-analyze:
-	$(COMPOSE_CMD) exec $(MAIN_SERVICE_NAME) vendor/bin/psalm --stats --no-cache --show-info=true
-
 # Runs the test suite
 test:
 	$(COMPOSE_CMD) exec $(MAIN_SERVICE_NAME) vendor/bin/phpunit --coverage-text
@@ -44,4 +40,4 @@ stop:
 	$(COMPOSE_CMD) stop
 
 # Prepares a PR
-pr: fmt analyze test
+pr: fmt test
