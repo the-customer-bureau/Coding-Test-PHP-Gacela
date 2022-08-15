@@ -7,9 +7,12 @@
     "php": ">=7.4",
     "ext-pdo": "*",
     "ext-mysqli": "*",
+    "ext-json": "*",
     "gacela-project/gacela": "dev-master",
     "symfony/http-client": "^5.3",
-    "symfony/var-dumper": "^5.4"
+    "symfony/var-dumper": "^5.4",
+    "kriswallsmith/buzz": "^1.2",
+    "nyholm/psr7": "^1.5"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"

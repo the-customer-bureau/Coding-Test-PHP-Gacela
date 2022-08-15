@@ -1,0 +1,16 @@
+<?php
+/**
+ * Template Vars 
+ * @var $pokemon \Engineered\PokeApi\Domain\Pokemon
+ * @var $name string
+ */ 
+?>
+<html lang="en">
+<head>
+    <title>Find your Pokemon!</title>
+</head>
+<body>
+    <h1>Hey <?= $name ?>, your soul Pokémon is <?= ucwords($pokemon->getName()) ?>!</h1>
+    <img src="<?= $pokemon->getImageUrl() ?>" alt="<?= $pokemon->getName() ?>"/>
+</body>
+</html>
